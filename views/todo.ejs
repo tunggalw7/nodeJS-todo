@@ -1,0 +1,55 @@
+
+
+<html lang="en">
+   <%- include header %>
+  
+   <!-- Main component for a primary marketing message or call to action -->
+      <div class="content-todo">
+        <h5>Todo List</h5>
+        <p>
+            <form role="form" method="post" action="/addtodo">
+                <div class="input-group mb-3">
+                    <input type="text" name="todo" class="form-control" placeholder="type your todo" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary btn-add" type="submit">Add</button>
+                    </div>
+                </div>
+            </form>
+            <table id="list" class="table">
+                <tbody>
+                <% for( var i = 0; i < data.length; i++){ %>
+                            <tr>
+                                <th scope="row">    
+                                    <input class="customCheckBox large" id="todo<%= data[i].id %>" type="checkbox" onchange="toggleTask('todo'+'<%= data[i].id %>')" value="true">
+                                </th>
+                                <td class="todotext" id="striketodo<%= data[i].id %>">
+                                    <%= data[i].todo %>
+                                </td>
+                                <td>
+                                    <span class="close" style="color:red">
+                                        <a href="/deletetodo/<%= data[i].id %>">×
+                                        </a>
+                                    </span>
+                                </td>
+                            </tr>
+                  <% } %>
+        </tbody>
+    </table>    
+        </p>
+    </div>
+      
+<script>
+    function toggleTask(id)
+    {
+        var checkedValue = $("#"+id).prop("checked");
+        if (checkedValue)
+        {
+            $("#strike"+id).css( "text-decoration", "line-through" );
+        }
+        else
+        {
+            $("#strike"+id).css( "text-decoration", "none" );
+        }
+    }
+</script>
+<%- include footer %>

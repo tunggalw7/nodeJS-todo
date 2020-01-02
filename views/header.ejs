@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+  <style>
+    a.nav-link {
+      color: #000;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    #list a:hover {
+      color:black;      
+      text-decoration: none;
+    }
+    #list a {
+      color:red;
+    }
+    .content-todo{
+      background-color: #FFFFFF!important;
+      padding: 50px!important;
+    }
+    .btn-add{      
+      background-color: #d0e07c!important;
+      color: #FFF!important;
+      border: 0!important;
+    }
+    .customCheckBox[type="checkbox"]:after{
+        position: relative;
+        display: block;
+        left: 0px;
+        top: -11px;
+        width: 7px;
+        height: 7px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #B3B3B3 #dcddde #dcddde #B3B3B3;
+        content: "";
+        background-repeat: no-repeat;
+        background-position:center;
+    }
+
+    .customCheckBox[type="checkbox"]:before{
+        border: 1px solid #808080;
+        content: "";
+        background: #FFF;
+        position: relative;
+        display: block;
+        width: 11px;
+        height: 11px;
+
+    }
+    .customCheckBox[type="checkbox"]:checked:after{
+        background-image:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAQAAABuW59YAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB2SURBVHjaAGkAlv8A3QDyAP0A/QD+Dam3W+kCAAD8APYAAgTVZaZCGwwA5wr0AvcA+Dh+7UX/x24AqK3Wg/8nt6w4/5q71wAAVP9g/7rTXf9n/+9N+AAAtpJa/zf/S//DhP8H/wAA4gzWj2P4lsf0JP0A/wADAHB0Ngka6UmKAAAAAElFTkSuQmCC');
+    }
+    /* Large checkboxes */
+    .customCheckBox.large{
+        height:22px;
+        width: 22px;
+    }
+
+    .customCheckBox.large[type="checkbox"]:before{
+        width: 20px;
+        height: 20px;
+    }
+    .customCheckBox.large[type="checkbox"]:after{
+        top: -20px;
+        width: 20px;
+        height: 20px;
+    }
+    .todotext{
+      font-weight: 500;
+    }
+  </style>
+    <meta charset="UTF-8">
+    <title>Sample Site</title>
+     <link rel='stylesheet' href='/stylesheets/style.css' />
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </head>
+<body>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-expand-lg navbar-primary bg-primary" style="background-color: #d0e07c!important;">
+        <a class="navbar-brand" href="#">
+          <img src="https://www.limecommerce.com/wp-content/uploads/2019/06/Asset-1.png" width="100px" class="d-inline-block align-top" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/home/dashboard">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/home/todo">Todo <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">              
+            <a class="nav-link" href="/home/logout">Logout <span class="sr-only">(current)</span></a>
+          </form>
+        </div>
+      </nav>
+
+      
